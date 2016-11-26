@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <_name>Remove duplicates</_name>
+    <id>org.leminaw.filter.removeduplicates</id>
+    <dependency type="executable" location="extensions">removeDuplicates.py</dependency>
+    <dependency type="executable" location="extensions">inkex.py</dependency>
+    <param name="tab" type="notebook">
+        <page name="Options" _gui-text="Options">
+            <param name="radius"  type="float" min="0.0" max="1000.0" _gui-text="Maximum radius (px):">0.0</param>
+            <param name="reverse" type="bool"                         _gui-text="Consider reversed paths as equals:">True</param>
+        </page>
+        <page name="Help" _gui-text="Help">
+            <_param name="title" type="description">This extensions eliminates duplicated geometry.</_param>
+        </page>
+    </param>
+    <effect>
+        <object-type>path</object-type>
+        <effects-menu>
+            <submenu _name="Modify Path"/>
+        </effects-menu>
+    </effect>
+    <script>
+        <command reldir="extensions" interpreter="python">removeDuplicates.py</command>
+    </script>
+</inkscape-extension>
